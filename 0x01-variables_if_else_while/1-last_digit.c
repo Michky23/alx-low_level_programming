@@ -2,8 +2,8 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main - Entry point printing with printf
- * Return: Always return (0)
+ * main - Entry point
+ * Return: Always return 0 (Success)
  */
 int main(void)
 {
