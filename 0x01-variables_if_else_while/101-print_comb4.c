@@ -1,35 +1,42 @@
 #include <stdio.h>
-
 /**
- * main - Entry point
+ * main - prints 4 digits separated by space and comma
  *
- * Return: Always (0)
+ * Return: (0)
+ *
  */
 int main(void)
-
 {
-	int i, j, k;
+	int i, j;
+	int a, b, c, d;
 
-	for (i = 48 ; i <= 58 ; i++)
+	for (i = 0; i < 100; i++)
 	{
-		for (j = 49 ; j <= 58 ; j++)
+		a = i / 10;
+		b = i % 10;
+
+		for (j = 0; j < 100; j++)
 		{
-			for (k = 50 ; k <= 58 ; k++)
+			c = j / 10;
+			d = j % 10;
+
+			if (a < c || (a == c && b < d))
 			{
-				if (k > j && j > i)
+				putchar(a + '0');
+				putchar(b + '0');
+				putchar(32);
+				putchar(c + '0');
+				putchar(d + '0');
+
+				if (!(a == 9 && b == 8))
 				{
-					putchar(i);
-					putchar(j);
-					putchar(k);
-					if (i != 55 || j != 56)
-					{
-						putchar(',');
-						putchar(' ');
-					}
+					putchar(44);
+					putchar(32);
 				}
 			}
 		}
 	}
-	putchar('\n');
+	putchar(10);
+
 	return (0);
 }
