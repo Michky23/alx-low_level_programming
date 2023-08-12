@@ -1,30 +1,30 @@
 #include <stdio.h>
+
 /**
  * main - Entry point
  *
  * Return: Always (0)
  */
 int main(void)
-{
-	int i = '0';
-	int j = '0';
-	int k = '0';
 
-	for (k = '0'; k <= '9'; k++)
+{
+	int i, j, k,
+
+	for (i = 48 ; i < 58 ; i++)
 	{
-		for (j = '0'; j <= '9'; j++)
+		for (j = 49 ; j < 58 ; j++)
 		{
-			for (i = '0'; i <= '9'; i++)
+			for (k = 50 ; k < 58 ; k++)
 			{
-				if (!((i == j) || (j == k) || (j > i) || (k > i)))
+				if (k > j && j > i)
 				{
-					putchar(k);
-					putchar(j);
 					putchar(i);
-					if (!(i == '9' && k == '7' && j == '8'))
+					putchar(j);
+					putchar(k);
+					if (i != 55 || j != 56)
 					{
 						putchar(',');
-						putchar(' ');
+						putxhar(' ');
 					}
 				}
 			}
