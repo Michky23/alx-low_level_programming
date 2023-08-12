@@ -1,42 +1,45 @@
 #include <stdio.h>
 /**
- * main - prints 4 digits separated by space and comma
+ * main - print numbers in 3s separaed by , and space
  *
  * Return: (0)
  *
  */
 int main(void)
 {
-	int i, j;
-	int a, b, c, d;
+	int num1, num2, num3;
 
-	for (i = 0; i < 100; i++)
+	num1 = '0';
+	num2 = '0';
+	num3 = '0';
+
+	while (num1 <= '9')
 	{
-		a = i / 10;
-		b = i % 10;
-
-		for (j = 0; j < 100; j++)
+		while (num2 <= '9')
 		{
-			c = j / 10;
-			d = j % 10;
-
-			if (a < c || (a == c && b < d))
+			num3 = '0';
+			while (num3 <= '9')
 			{
-				putchar(a + '0');
-				putchar(b + '0');
-				putchar(32);
-				putchar(c + '0');
-				putchar(d + '0');
-
-				if (!(a == 9 && b == 8))
+				if (num1 < num2 && num2 < num3)
 				{
-					putchar(44);
-					putchar(32);
+					putchar(num1);
+					putchar(num2);
+					putchar(num3);
+
+					if (num1 != '7')
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
+				num3++;
 			}
+			num2++;
 		}
+		num1++;
+		num2 = '0';
 	}
-	putchar(10);
+	putchar('\n');
 
 	return (0);
 }
