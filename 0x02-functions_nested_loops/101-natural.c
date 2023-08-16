@@ -1,12 +1,14 @@
 #include <stdio.h>
 
 /**
-  * main function - Prints the sum of all multiples of 3 or 5 up to 1024
-  *
-  * Return: Always (Success)
-  */
+ * main - Prints all natural number below 1024
+ * that wre multiple of 3 or 5
+ *
+ * Return: Always (Success)
+ */
 
 int main(void)
+
 {
 	int i, k = 0;
 
