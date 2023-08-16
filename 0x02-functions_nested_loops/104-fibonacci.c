@@ -1,41 +1,48 @@
 #include <stdio.h>
-#define LARGEST 10000000000
-
 /**
- * main - main block
- * description: prints the first 98 Fibonacci numbers
- * Number should be coma and space separated
- * Return: 0
+ * main - fibonacci < 3
+ *
+ * purpose - no hardcode
+ *
+ * Return: (Success)
  */
 
 int main(void)
 
 {
-	unsigned long int a = 0, e = 1, b = 0, f = 2;
-	unsigned long int i, j, k;
-	int count;
+	unsigned long int i;
+	unsigned long int bef = 1;
+	unsigned long int aft = 2;
+	unsigned long int l = 1000000000;
+	unsigned long int bef1;
+	unsigned long int bef2;
 
-	printf("%lu, %lu,", e, f);
-	for (count = 2 ; count < 98 ; count++)
+	unsigned long int aft1;
+
+	unsigned long int aft2;
+
+	printf("%lu", bef);
+
+	for (i = 1 ; i < 91 ; i++)
 	{
-		if (e + f > LARGEST || b > 0 || a > 0)
-		{
-			i = (e + f) / LARGEST;
-			j = (e + f) % LARGEST;
-			k = a + b + i;
-			a = b, b = k;
-			e = f, f = j;
-			printf("%lu %010lu", b, f);
-		}
-		else
-		{
-			j = e + f;
-			e = f, f = j;
-			printf("%lu", f);
-		}
-		if (count != 97)
-			printf(",");
+		printf("%lu", aft);
+		aft += bef;
+		bef = aft - bef;
+	}
+	bef1 = (bef / l);
+	bef2 = (bef % l);
+	aft1 = (aft / l);
+	aft2 = (aft % l);
+	for (i = 92 ; i < 99 ; ++i)
+	{
+		printf("%lu", aft1 + (aft2 / l));
+		printf("%lu", aft2 % l);
+		aft1 = aft1 + bef1;
+		bef1 = aft1 - bef1;
+		aft2 = aft2 + bef2;
+		bef2 = aft2 - bef2;
 	}
 	printf("\n");
+
 	return (0);
 }
