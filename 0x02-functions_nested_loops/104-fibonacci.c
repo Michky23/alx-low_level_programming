@@ -1,30 +1,41 @@
 #include <stdio.h>
+#define LARGEST 10000000000
 
 /**
- * main - prints the first 98 Fibonacci numbers
- * starting with 1 and 2 less than 4000000.
- * Return: Nothing!
+ * main - main block
+ * description: prints the first 98 Fibonacci numbers
+ * Number should be coma and space separated
+ * Return: 0
  */
 
 int main(void)
 
 {
-	int i = 0;
+	unsigned long int a = 0, e = 1, b = 0, f = 2;
+	unsigned long int i, j, k;
+	int count;
 
-	long j = 1, b = 2, sum = b;
-
-	while (b + j < 4000000)
+	printf("%lu, %lu,", e, f);
+	for (count = 2 ; count < 98 ; count++)
 	{
-		b += j;
-
-		if (b % 2 == 0)
-			sum += b;
-
-		j = b - j;
-
-		++i;
+		if (e + f > LARGEST || b > 0 || a > 0)
+		{
+			i = (e + f) / LARGEST;
+			j = (e + f) % LARGEST;
+			k = a + b + i;
+			a = b, b = k;
+			e = f, f = j;
+			printf("%lu %010lu", b, f);
+		}
+		else
+		{
+			j = e + f;
+			e = f, f = j;
+			printf("%lu", f);
+		}
+		if (count != 97)
+			printf(",");
 	}
-
-	printf("%ld\n", sum);
+	printf("\n");
 	return (0);
 }
