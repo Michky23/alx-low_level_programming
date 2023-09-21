@@ -12,31 +12,26 @@ list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new_node;
 
-	if (str == NULL)
-	{
-		return (NULL);/*Return NULL if the input string is NULL*/
-	}
-	new_node = malloc(sizeof(list_t));/*allocate memoryto the new node*/
-
+	if (head == NULL)
+		return (NULL);
+	new_node = malloc(sizeof(list_t));
 	if (new_node == NULL)
-	{
-		return (NULL);/*Return NULL if memory allocation fails*/
-		new_node->str = strdup(str);
-		if (new_node->str == NULL)
-		{
-			free(new_node);
-			return (NULL);
-		}
-		new_node->next = *head;
-		*head = new_node;
-	}
-	return (new_node);
-}
+		return (NULL);
 
+	if (*head == NULL)
+
+		new_node->next = NULL;
+	else
+			new_node->next = *head;
+		new_node->str = strdup(str);
+		new_node->len = len(str);
+		*head = new_node;
+	return (*head);
+}
 /**
- * len - the length of str (string)
+ * len - get the length of str (string)
  * @str: the string to get its length
- * Return: the length of the string
+ * Return: length of the string
  */
 int len(const char *str)
 {
