@@ -13,7 +13,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	unsigned long int increase;
 
 	value = n ^ m;
-	for (increase = 0;value > 0;)
+	for (increase = 0; value > 0;)
 	{
 		if ((value & 1) == 1)
 			increase++;
