@@ -27,7 +27,7 @@ void check_elf(unsigned char *e_ident)
 {
 	int index;
 
-		for (index = 0; index < 4; index++)
+	for (index = 0; index < 4; index++)
 	{
 		if (e_ident[index] != 127 &&
 		e_ident[index] != 'E' &&
@@ -168,7 +168,7 @@ void print_osabi(unsigned char *e_ident)
 		printf("ARM\n");
 		break;
 	case ELFOSABI_STANDALONE:
-		printf("Standalone App\n")
+		printf("Standalone App\n");
 		break;
 	default:
 		printf("<unknown: %x>\n", e_ident[EI_OSABI]);
